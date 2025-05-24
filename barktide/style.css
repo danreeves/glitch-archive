@@ -1,0 +1,89 @@
+* {
+  box-sizing: border-box;
+  user-select: none;
+}
+
+body {
+  font-family: "Rubik Glitch", sans-serif;
+  background-color: #69f7be;
+  color: #2800ff;
+  max-width: 100%;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  margin: 0 1rem;
+  max-width: 100%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+}
+
+.title {
+  color: #2800ff;
+  font-family: "Rubik Glitch", sans-serif;
+  font-weight: 400;
+  font-size: 100px;
+
+  font-size: min(100px, 15vw);
+  line-height: 105%;
+  margin: 0;
+  transform: rotate(-2deg);
+  text-shadow: 4px 4px 0px seagreen;
+}
+
+.dog {
+  max-width: 100%;
+  text-align: center;
+}
+
+.dog img {
+  max-width: 100%;
+}
+
+body:active img {
+  transform: translateY(5px);
+}
+
+@keyframes wave2 {
+  0% {
+    top: -3px;
+    right: -1px;
+  }
+  100% {
+    top: 3px;
+    right: 1px;
+  }
+}
+
+.wave2 {
+  transform: translate(0, 0) rotate(0deg);
+  opacity: 1;
+  transition-duration: 1.5s, 2.5s;
+  transition-property: transform, opacity;
+  transition-timing-function: cubic-bezier(0, 0.65, 0.58, 1);
+  text-shadow: 1px 1px 0px seagreen;
+  pointer-events: none;
+}
+
+.wave2 span {
+  position: relative;
+  animation: wave2 0.5s ease-in-out infinite alternate;
+}
+
+.cta {
+  color: #ff71ce;
+  font-size: 25px;
+  font-size: 18px;
+  font-family: sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}

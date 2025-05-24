@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Canvas</title>
+    <style>
+  		body {
+    	margin: 0;
+    	overflow: hidden;
+  }
+</style>
+  </head>
+  <body>
+  	<canvas class="myCanvas">
+  		<p>Add suitable fallback here.</p>
+	</canvas>
+
+    <script>
+    	const canvas = document.querySelector('.myCanvas');
+		const width = canvas.width = window.innerWidth;
+		const height = canvas.height = window.innerHeight;
+    	const ctx = canvas.getContext('2d');
+ 
+
+    	//Clock centre
+    	ctx.translate(width/2, height/2);
+
+
+		let innerRad = 100;
+		let outerRad = Math.floor(width/2);
+		//let outerRad = 500;
+		let separation = Math.floor((outerRad-innerRad)/6);
+
+		ctx.lineWidth = separation-1;
+		let Start = degToRad(270);
+
+		
+
+		
+
+		function timeLoop() {
+
+			//Draw the background
+			ctx.fillStyle = 'rgb(0,0,0)';
+			ctx.fillRect(0-width/2, 0-height/2, width, height);
+
+			theTime = new Date();
+			timeArray = new Array();
+			//timeArray[6] 	= degToRad(360 * (theTime.getFullYear()-2000) /100);
+			//timeArray[5] 	= degToRad(360 * theTime.getMonth() /12)			+ timeArray[6];
+			//timeArray[4] 	= degToRad(360 * theTime.getDate() /32)				+ timeArray[5];
+			timeArray[4] 	= 0;
+			timeArray[3] 	= degToRad(360 * (theTime.getHours() % 12 + (theTime.getMinutes()/60))/12) 	+ timeArray[4];
+			timeArray[2] 	= degToRad(360 * (theTime.getMinutes()+theTime.getSeconds()/60) /60)	+ timeArray[3];
+			timeArray[1] 	= degToRad(360 * (theTime.getSeconds()+theTime.getMilliseconds()/1000)/60) + timeArray[2];
+			//timeArray[0] 	= degToRad(360 * theTime.getMilliseconds() /1000) 	+ timeArray[1];
+
+			for (let layer = 0; layer < timeArray.length; layer++){
+				ctx.strokeStyle = 'rgb(255, 255, 255)';
+				ctx.beginPath();
+				ctx.arc( 0, 0, 
+					innerRad + separation * layer, 
+					Start + timeArray[layer+1], 
+					Start + timeArray[layer], 
+					false);
+				ctx.stroke();
+			}
+
+			requestAnimationFrame( timeLoop );
+
+
+		}
+
+		timeLoop();
+
+		
+
+		function degToRad(degrees) {
+  			return degrees * Math.PI / 180;
+		};
+    </script>
+  </body>
+</html>

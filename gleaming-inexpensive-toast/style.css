@@ -1,0 +1,28 @@
+/* CSS files add styling rules to your content */
+
+body {
+	font-family: Papyrus,fantasy; 
+  margin: 2em;
+  color: cyan;
+  font-size: 32px;
+  background-image: url('https://cdn.glitch.com/684abcb8-d325-40d5-a745-047cbec71315%2Fstarstwinkle.gif?v=1600095141064');
+}
+
+a {
+  color: lime;
+  float: right;
+}
+
+a:before {
+  content: ' - ';
+}
+
+h1, p {
+  margin-left: auto;
+  margin-right: auto;
+  width: 600px;
+}
+
+.time {
+  color: red !important;
+}

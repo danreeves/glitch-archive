@@ -1,0 +1,27 @@
+@font-face{
+ font-family:'digital-clock-font';
+ src: url('https://cdn.glitch.com/0a4a845f-0842-4c36-b3b6-cee900498495%2Fdigital-7.ttf?v=1624925832522');
+}
+
+body {
+  font-family: digital-clock-font;
+  font-size: 10rem;
+  background: black;
+}
+
+h1 {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  color: red;
+}
+
+span {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}

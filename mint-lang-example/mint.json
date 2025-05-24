@@ -1,0 +1,5 @@
+{
+  "name": "mint-example-app",
+  "source-directories": ["source"],
+  "test-directories": ["tests"]
+}

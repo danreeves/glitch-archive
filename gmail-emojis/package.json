@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "emojis-list": "*",
+    "emoji-unicode": "*",
+    "express": "*"
+  },
+  "engines": {
+    "node": "16"
+  }
+}

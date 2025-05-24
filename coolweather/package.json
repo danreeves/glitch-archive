@@ -1,0 +1,20 @@
+{
+  "name": "coolweather",
+  "version": "1.0.0",
+  "description": " 🌧️ ",
+  "scripts": {
+    "start": "node server.js | pino-colada"
+  },
+  "dependencies": {
+    "merry": "5.5.2",
+    "node-fetch": "^2",
+    "pino-colada": "^2.2.2",
+    "timed-cache": "^1.1.5"
+  },
+  "repository": {
+    "url": "https://glitch.com/edit/#!/coolweather"
+  },
+  "engines": {
+    "node": "16"
+  }
+}

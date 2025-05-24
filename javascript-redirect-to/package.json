@@ -1,0 +1,11 @@
+{
+  "name": "http-redirect-to",
+  "description": "Redirects to a given URL",
+  "main": "server.js",
+  "scripts": {
+    "start": "micro server.js"
+  },
+  "dependencies": {
+    "micro": "*"
+  }
+}

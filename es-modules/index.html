@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ES Modules demo</title>
+  <style> 
+    html, body {
+      margin:0;
+      padding:0;
+      font-family: sans-serif;
+    }
+    body {
+      margin: 2em;
+    }
+    a {
+      text-decoration: none;
+      font-weight: bold;
+      color: deeppink;
+    }
+  </style>
+</head>
+
+<p class="p1">Your browser doesn't support ES Modules (-_-｡)</p>
+
+<p>
+  See how this works by reading <a href="https://glitch.com/edit/#!/es-modules?path=public/index.html:33:0">the code on Glitch 🎏</a>
+</p>
+
+<p>
+  <a href="https://jakearchibald.com/2017/es-modules-in-browsers/">Read more about ES Modules and how to use them in the browser</a>
+</p>
+
+<!-- 👇 Good stuff down here 👇 -->
+
+<!-- type="module" is the important part -->
+<script type="module" src="/client.js"></script>
+
+<!-- This would be a bundled up fallback for browsers
+     that don't support ES Modules. It needs the nomodule
+     attribute so that new browsers don't try to use it. -->
+<script nomodule src="/client.bundle.js"></script>

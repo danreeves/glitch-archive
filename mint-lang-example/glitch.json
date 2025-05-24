@@ -1,0 +1,10 @@
+{
+  "install": "wget --no-verbose -O mint https://mint-lang.s3-eu-west-1.amazonaws.com/mint-latest-linux && chmod +x ./mint",
+  "start": "./mint start --port 3000",
+  "watch": {
+    "throttle": 500,
+    "restart": {
+      "exclude": ["\\.mint$"]
+    }
+  }
+}

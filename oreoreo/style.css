@@ -1,0 +1,72 @@
+*, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+  margin: 2em;
+}
+
+h1 {
+  font-style: italic;
+  color: #003087;
+}
+
+a {
+  color: #7cc6f2;
+}
+
+#oreo {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  border: 5px solid #003087;
+  border-radius: 10px;
+  padding: 42px;
+  padding-top: 84px;
+  width: 200px;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.o {
+  background: #2b1d0e;
+  border: 10px double #181008;
+  width: 100px;
+  height: 50px;
+  margin-top: -37px;
+  border-radius: 100%;
+  position: relative;
+}
+
+.o:last-child::after {
+  content: 'oreo';
+  color: #181008;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: rotate3d(1, 0, 0, 45deg) translateX(-50%) translateY(-80%);
+}
+
+
+.re {
+  position: relative;
+  background: #FDF9F9;
+  border: 2px solid #E3E0E0;
+  width: 75px;
+  height: 25px;
+  margin-top: -22px;
+  border-radius: 100%;
+}
+
+.space {
+  background: transparent;
+  width: 100px;
+  height: 75px;
+  margin-top: -37px;
+  border-radius: 100%;
+  position: relative;
+}

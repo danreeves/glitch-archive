@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="icon"
+      href="https://cdn.glitch.com/ec54c319-a720-432f-95f1-9e699351fa2f%2Ffavicon.ico?v=1615875178020"
+    />
+    <title>Maya's House - MapleStory tools</title>
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <!-- import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    <img
+      id="maya"
+      src="https://maplelegends.com/static/images/lib/npc/1012101.png"
+      alt=""
+    />
+    <h1>Maya's House <span>A collection of MapleStory tools ~</span></h1>
+    <h2>Damage Calculator</h2>
+    <p id="credits">
+      Based on
+      <a
+        href="https://forum.maplelegends.com/index.php?threads/nises-formula-compilation.36234/"
+        >Nise's Formula compilation</a
+      >.
+    </p>
+    <form id="form">
+      <label>
+        Weapon Type:
+        <select id="weapon"> </select>
+      </label>
+      <br />
+
+      <label>
+        STR:
+        <input type="number" id="str" value="4" />
+      </label>
+      <label>
+        DEX:
+        <input type="number" id="dex" value="4" />
+      </label>
+      <label>
+        INT:
+        <input type="number" id="int" value="4" />
+      </label>
+      <label>
+        LUK:
+        <input type="number" id="luk" value="4" />
+      </label>
+      <br />
+
+      <label>
+        Weapon Attack:
+        <input type="number" id="atk" value="0" />
+      </label>
+      <label>
+        Magic Attack:
+        <input type="number" id="matk" value="0" />
+      </label>
+      <label>
+        Spell Attack:
+        <input type="number" id="spatk" value="0" />
+      </label>
+      <br />
+
+      <label>
+        Mastery:
+        <input type="number" id="mastery" value="10" min="10" /> %
+      </label>
+      <br />
+
+      <button type="submit">Calculate</button>
+    </form>
+
+    <p id="result"></p>
+    <hr />
+    <h2>
+      Store Title Tester
+    </h2>
+    <form>
+      <div id="title-visual">1-1 Your Store Name</div>
+      <label
+        >Title:
+        <input
+          maxlength="41"
+          id="title-input"
+          value="1-1 Your Store                 Name"
+      /></label>
+    </form>
+    <hr />
+    <p class="credits">
+      <a
+        class="imgs"
+        href="https://maplelegends.com/ranking/all?search=Rainily"
+      >
+        <img
+          id="avatar-Rainily"
+          src="https://maplelegends.com/api/getavatar?name=Rainily&face=F2"
+          alt=""
+        />
+        <img
+          id="avatar-raindish"
+          src="https://maplelegends.com/api/getavatar?name=raindish&face=F2"
+          alt=""
+        />
+      </a>
+
+      <a href="https://maplelegends.com/ranking/all?search=Rainily">
+        By Rainily.
+      </a>
+    </p>
+  </body>
+</html>

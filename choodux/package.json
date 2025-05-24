@@ -1,0 +1,14 @@
+{
+  "name": "choodux",
+  "version": "1.0.0",
+  "description": "A Choo demo using a state reducer à la Redux",
+  "scripts": {
+    "start": "rm -rf dist && bankai build client.js && serve dist"
+  },
+  "dependencies": {
+    "choo": "^6.6.0",
+    "bankai": "^9.1.0",
+    "serve": "^6.4.3"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,30 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-style: italic;
+  color: #373fff;
+  font-weight: 900;
+  letter-spacing: -1.5vw;
+  font-size: 25vw;
+  line-height: 20vw;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  text-align: center;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+      "Segoe UI Symbol";
+    font-style: italic;
+    background: #373fff;
+    color: white;
+  }
+}

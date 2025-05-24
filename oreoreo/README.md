@@ -1,0 +1,2 @@
+>       oreoooooo
+\ ゜o゜)ノ

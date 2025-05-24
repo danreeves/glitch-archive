@@ -1,0 +1,12 @@
+{
+  "name": "http-referrer",
+  "version": "0.0.0",
+  "description": "Just prints out the http referrer url",
+  "scripts": {
+    "start": "micro server.js"
+  },
+  "devDependencies": {
+    "micro": "*",
+    "stringify-object": "*"
+  }
+}

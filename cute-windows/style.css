@@ -1,0 +1,268 @@
+* {
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+:root {
+  --bg-color: cornsilk;
+  --interactive-bg-color: palegoldenrod;
+
+  --color: darkblue;
+  --shadow: midnightblue;
+  --shadow-dist: 2px;
+  --shadow-dist-picked: 5px;
+
+  --border-width: 3px;
+  --border-radius: 5px;
+
+  --font-family: "M PLUS Rounded 1c", Arial Rounded MT Bold, Helvetica Rounded,
+    Arial, sans-serif;
+  --font-weight: 900;
+
+  --titlebar-height: 1.5rem;
+  --window-control-height: 0.75rem;
+}
+
+.coral {
+  --bg-color: white;
+  --interactive-bg-color: coral;
+
+  --color: black;
+  --shadow: black;
+  --shadow-dist: 8px;
+  --shadow-dist-picked: 10px;
+
+  --border-width: 5px;
+  --border-radius: 12px;
+
+  --font-family: "M PLUS Rounded 1c", Arial Rounded MT Bold, Helvetica Rounded,
+    Arial, sans-serif;
+  --font-weight: 900;
+
+  --titlebar-height: 3rem;
+  --window-control-height: 1rem;
+}
+
+.bw {
+  --bg-color: black;
+  --interactive-bg-color: black;
+
+  --color: white;
+  --shadow: black;
+
+  --border-width: 1px;
+  --border-radius: 0;
+
+  --font-family: monospace;
+  --font-weight: 100;
+}
+
+.bw .window-close {
+  background: transparent;
+  border-radius: 0;
+  border: 0;
+}
+
+.bw .window-maximise {
+  background: transparent;
+  border-radius: 0;
+  border: 0;
+  height: 0.85rem;
+  width: 0.85rem;
+}
+
+.bw .line-h {
+  background: var(--color);
+}
+
+.bw .line-v {
+  background: var(--color);
+}
+
+.bw .window-titlebar button:not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+.pink {
+  --bg-color: pink;
+  --interactive-bg-color: lightpink;
+
+  --color: deeppink;
+  --shadow: plum;
+
+  --font-family: Comic Sans, Comic Sans MS, Arial Rounded MT Bold,
+    Helvetica Rounded, Arial, sans-serif;
+
+  --border-width: 5px;
+  --border-radius: 10px;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight);
+  color: var(--color);
+  background: var(--bg-color);
+}
+
+.wrapper {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  padding: 1rem;
+}
+
+p {
+  margin-top: 0;
+}
+
+button {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight);
+  display: inline-block;
+  border: none;
+  text-decoration: none;
+  background: var(--interactive-bg-color);
+  cursor: pointer;
+  text-align: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  color: var(--color);
+  border: var(--border-width) solid var(--color);
+  border-radius: var(--border-radius);
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.button {
+  box-shadow: var(--shadow-dist) var(--shadow-dist) 0px var(--shadow);
+  outline: none;
+}
+
+.button:active {
+  transform: translate(
+    calc(var(--shadow-dist) / 2),
+    calc(var(--shadow-dist) / 2)
+  );
+  box-shadow: calc(var(--shadow-dist) / 2) calc(var(--shadow-dist) / 2) 0px
+    var(--shadow);
+}
+
+.window {
+  position: absolute;
+  border: var(--border-width) solid var(--color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-dist) var(--shadow-dist) 0px var(--shadow);
+  background: var(--bg-color);
+  z-index: 0;
+  overflow: hidden;
+  transform: translate(0, 0);
+  transition: width 0.25s, height 0.25s, left 0.25s, top 0.25s, box-shadow 0.25s;
+}
+
+.window.mounting {
+  transition: left 0.1s, top 0.1s;
+}
+
+.window.picked {
+  box-shadow: var(--shadow-dist-picked) var(--shadow-dist-picked) 0px
+    var(--shadow);
+  transition: none;
+  transform: translate(
+    -calc(var(--shadow-dist) / 2),
+    -calc(var(--shadow-dist) / 2)
+  );
+}
+
+.window-titlebar {
+  border-bottom: var(--border-width) solid var(--color);
+  height: var(--titlebar-height);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  padding: calc(var(--titlebar-height) / 5);
+  background: var(--interactive-bg-color);
+  position: relative;
+  user-select: none;
+  cursor: grab;
+}
+
+.window-titlebar:active {
+  cursor: grabbing;
+}
+
+.window-body {
+  padding: 1rem;
+}
+
+.window-titlebar button:not(:last-child) {
+  margin-right: 0.25rem;
+}
+
+.window-close {
+  padding: 1.5px;
+  margin: 0;
+  font-size: 0;
+  line-height: 0;
+  background: var(--color);
+  height: calc(var(--window-control-height) + var(--border-width) * 2);
+  width: calc(var(--window-control-height) + var(--border-width) * 2);
+  border-radius: 1rem;
+  color: transparent;
+  z-index: 2;
+  position: relative;
+  transform: rotate(45deg);
+}
+
+.window-maximise {
+  padding: 1.5px;
+  margin: 0;
+  font-size: 0;
+  line-height: 0;
+  background: var(--color);
+  height: calc(var(--window-control-height) + var(--border-width) * 2);
+  width: calc(var(--window-control-height) + var(--border-width) * 2);
+  border-radius: 100%;
+  color: transparent;
+  z-index: 2;
+  position: relative;
+}
+
+.line-h {
+  height: var(--border-width);
+  width: 100%;
+  background: var(--interactive-bg-color);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  border-radius: var(--border-radius);
+}
+
+.line-v {
+  width: var(--border-width);
+  height: 100%;
+  background: var(--interactive-bg-color);
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  border-radius: var(--border-radius);
+}
+
+.window-title {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  z-index: 1;
+}
